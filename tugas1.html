@@ -1,0 +1,557 @@
+<section class="accordion">
+
+  <article class="accordion-item active">
+
+    <button class="accordion-trigger">
+      <div class="faq-number">01</div>
+
+      <div class="faq-title">
+        <h2>What do you do?</h2>
+        <span>About the studio</span>
+      </div>
+
+      <div class="faq-arrow">↗</div>
+    </button>
+
+    <div class="accordion-content">
+
+      <div></div>
+
+      <div class="faq-info">
+        <p>
+          We create digital experiences, websites,
+          visual identities and interactive work for
+          people and brands with something to say.
+        </p>
+
+        <p>
+          Our work sits somewhere between design,
+          technology and visual culture.
+        </p>
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <article class="accordion-item">
+
+    <button class="accordion-trigger">
+      <div class="faq-number">02</div>
+
+      <div class="faq-title">
+        <h2>How do you work?</h2>
+        <span>Process</span>
+      </div>
+
+      <div class="faq-arrow">↗</div>
+    </button>
+
+    <div class="accordion-content">
+
+      <div></div>
+
+      <div class="faq-info">
+        <p>
+          Every project starts with a conversation.
+          We first try to understand the idea, the
+          audience and the reason behind the work.
+        </p>
+
+        <p>
+          From there, strategy, design and development
+          evolve together.
+        </p>
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <article class="accordion-item">
+
+    <button class="accordion-trigger">
+      <div class="faq-number">03</div>
+
+      <div class="faq-title">
+        <h2>What kind of projects do you take?</h2>
+        <span>Projects</span>
+      </div>
+
+      <div class="faq-arrow">↗</div>
+    </button>
+
+    <div class="accordion-content">
+
+      <div></div>
+
+      <div class="faq-info">
+        <p>
+          We work on websites, digital products,
+          creative direction, visual identities and
+          experimental interactive experiences.
+        </p>
+
+        <p>
+          The format can change. The idea is what matters.
+        </p>
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <article class="accordion-item">
+
+    <button class="accordion-trigger">
+      <div class="faq-number">04</div>
+
+      <div class="faq-title">
+        <h2>How long does a project take?</h2>
+        <span>Timeline</span>
+      </div>
+
+      <div class="faq-arrow">↗</div>
+    </button>
+
+    <div class="accordion-content">
+
+      <div></div>
+
+      <div class="faq-info">
+        <p>
+          There is no fixed timeline. Smaller projects
+          can take a few weeks, while larger digital
+          experiences can take several months.
+        </p>
+
+        <p>
+          Each project is given the time it needs.
+        </p>
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <article class="accordion-item">
+
+    <button class="accordion-trigger">
+      <div class="faq-number">05</div>
+
+      <div class="faq-title">
+        <h2>How can we work together?</h2>
+        <span>Contact</span>
+      </div>
+
+      <div class="faq-arrow">↗</div>
+    </button>
+
+    <div class="accordion-content">
+
+      <div></div>
+
+      <div class="faq-info">
+
+        <p>
+          Send us a message with some information
+          about your project, what you are trying to
+          achieve and when you would like to start.
+        </p>
+
+        <a href="#" class="contact-link">
+          START A CONVERSATION
+          <span>↗</span>
+        </a>
+
+      </div>
+
+    </div>
+
+  </article>
+
+
+  <!-- 06 -->
+
+  <article class="accordion-item">
+
+    <button class="accordion-trigger">
+      <div class="faq-number">06</div>
+
+      <div class="faq-title">
+        <h2>Do you work with people worldwide?</h2>
+        <span>Availability</span>
+      </div>
+
+      <div class="faq-arrow">↗</div>
+    </button>
+
+    <div class="accordion-content">
+
+      <div></div>
+
+      <div class="faq-info">
+
+        <p>
+          Yes. We work remotely with clients,
+          collaborators and teams from different
+          places around the world.
+        </p>
+
+        <p>
+          Most of our communication happens online,
+          allowing the work to move without being
+          limited by location.
+        </p>
+
+      </div>
+
+    </div>
+
+  </article>
+
+</section>
+
+
+<style>
+
+/* =====================================================
+   FAQ ACCORDION
+===================================================== */
+
+.accordion {
+  border-top: 1px solid rgba(255,255,255,.2);
+}
+
+.accordion-item {
+  border-bottom: 1px solid rgba(255,255,255,.2);
+}
+
+
+/* =====================================================
+   TRIGGER
+===================================================== */
+
+.accordion-trigger {
+  width: 100%;
+
+  padding: 28px 0;
+
+  display: grid;
+
+  grid-template-columns:
+    8%
+    1fr
+    40px;
+
+  align-items: center;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    padding .5s cubic-bezier(.22,1,.36,1);
+}
+
+.accordion-trigger:hover {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+
+/* NUMBER */
+
+.faq-number {
+  font-size: 10px;
+  opacity: .4;
+}
+
+
+/* TITLE */
+
+.faq-title {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+}
+
+.faq-title h2 {
+  font-size: clamp(28px, 3.2vw, 52px);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  letter-spacing: -.055em;
+}
+
+.faq-title span {
+  font-size: 9px;
+
+  letter-spacing: .08em;
+
+  text-transform: uppercase;
+
+  opacity: .35;
+}
+
+
+/* ARROW */
+
+.faq-arrow {
+  font-size: 24px;
+
+  transition:
+    transform .6s cubic-bezier(.22,1,.36,1);
+}
+
+.accordion-item.active .faq-arrow {
+  transform: rotate(45deg);
+}
+
+
+/* =====================================================
+   ANSWER
+===================================================== */
+
+.accordion-content {
+
+  display: grid;
+
+  grid-template-columns:
+    8%
+    1fr;
+
+  max-height: 0;
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  transition:
+    max-height .8s cubic-bezier(.22,1,.36,1),
+    opacity .5s ease;
+}
+
+.accordion-item.active .accordion-content {
+
+  max-height: 500px;
+
+  opacity: 1;
+
+  padding-bottom: 60px;
+}
+
+
+/* =====================================================
+   TEXT
+===================================================== */
+
+.faq-info {
+  max-width: 700px;
+
+  padding-top: 10px;
+}
+
+.faq-info p {
+
+  max-width: 650px;
+
+  margin-bottom: 24px;
+
+  font-size: clamp(16px, 1.4vw, 21px);
+
+  line-height: 1.5;
+
+  letter-spacing: -.02em;
+
+  opacity: .5;
+}
+
+.faq-info p:last-of-type {
+  margin-bottom: 35px;
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact-link {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  padding-bottom: 8px;
+
+  border-bottom: 1px solid currentColor;
+
+  font-size: 10px;
+
+  letter-spacing: .08em;
+}
+
+.contact-link span {
+  transition: transform .4s ease;
+}
+
+.contact-link:hover span {
+  transform: translate(4px,-4px);
+}
+
+
+/* =====================================================
+   LIGHT MODE
+===================================================== */
+
+body.light .accordion,
+body.light .accordion-item {
+  border-color: rgba(0,0,0,.2);
+}
+
+body.light .faq-info p {
+  opacity: .55;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+  .accordion-trigger {
+
+    grid-template-columns:
+      12%
+      1fr
+      30px;
+
+    padding: 23px 0;
+  }
+
+  .accordion-trigger:hover {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .faq-title {
+    display: block;
+  }
+
+  .faq-title h2 {
+    font-size: 28px;
+    line-height: .95;
+  }
+
+  .faq-title span {
+
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 8px;
+  }
+
+  .faq-arrow {
+    font-size: 20px;
+  }
+
+  .accordion-content {
+
+    grid-template-columns:
+      12%
+      1fr;
+  }
+
+  .accordion-item.active
+  .accordion-content {
+
+    padding-bottom: 40px;
+  }
+
+  .faq-info {
+    padding-right: 10px;
+  }
+
+  .faq-info p {
+
+    font-size: 15px;
+
+    line-height: 1.5;
+  }
+
+}
+</style>
+
+
+<script>
+/* =====================================================
+   FAQ ACCORDION
+===================================================== */
+
+const items =
+  document.querySelectorAll(".accordion-item");
+
+items.forEach((item) => {
+
+  const trigger =
+    item.querySelector(".accordion-trigger");
+
+  trigger.addEventListener("click", () => {
+
+    const alreadyOpen =
+      item.classList.contains("active");
+
+
+    // close all
+    items.forEach((other) => {
+
+      other.classList.remove("active");
+
+    });
+
+
+    // open clicked item
+    if (!alreadyOpen) {
+
+      item.classList.add("active");
+
+    }
+
+  });
+
+});
+
+
+/* =====================================================
+   DARK / LIGHT MODE
+===================================================== */
+
+const themeToggle =
+  document.getElementById("themeToggle");
+
+const themeText =
+  themeToggle.querySelector(".theme-text");
+
+
+themeToggle.addEventListener("click", () => {
+
+  document.body.classList.toggle("light");
+
+  const isLight =
+    document.body.classList.contains("light");
+
+  themeText.textContent =
+    isLight ? "DARK" : "LIGHT";
+
+});
+</script>
