@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dari Masa Depan</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+    background:#fff;
+    color:#080808;
+    font-family:Inter,Arial,sans-serif;
+    overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+
+/* HEADER */
+.header{
+    position:fixed;top:15px;left:30px;right:30px;height:42px;z-index:100;
+    background:#000;color:#fff;border-radius:30px;
+    display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;padding:0 13px;
+}
+.access-btn{
+    justify-self:start;font-size:9px;border:1px solid #fff;border-radius:30px;
+    padding:6px 12px;line-height:1;transition:.3s ease
+}
+.access-btn:hover{background:#fff;color:#000}
+.header-title{text-align:center;font-size:11px;font-weight:600}
+.online{justify-self:end;font-size:8px;white-space:nowrap}
+
+/* HERO */
+.hero{position:relative;height:610px;padding-top:100px;overflow:hidden}
+.hero-center{
+    position:absolute;top:136px;left:50%;transform:translateX(-50%);
+    width:250px;text-align:center;z-index:5
+}
+.eyebrow{font-size:10px;margin-bottom:5px}
+.hero-center h1{
+    font-size:47px;line-height:.92;letter-spacing:-2.4px;font-weight:400
+}
+.hero-center p{
+    width:170px;margin:24px auto 0;font-size:9px;line-height:1.55
+}
+.hero-art{position:absolute;z-index:2}
+.hero-art img{display:block;width:100%;height:100%;object-fit:cover}
+.hero-left{width:250px;height:260px;left:20px;top:96px}
+.hero-right{width:245px;height:260px;right:10px;top:245px}
+
+/* CLIENTS */
+.clients{height:305px;padding-top:4px;overflow:hidden}
+.clients-title{margin-left:32px;font-size:15px;margin-bottom:45px}
+.client-marquee{width:100%;overflow:hidden}
+.client-track{
+    width:max-content;display:flex;align-items:center;gap:48px;
+    animation:clientsMove 25s linear infinite
+}
+.client-track span{
+    font-size:39px;line-height:1;letter-spacing:-1.7px;white-space:nowrap
+}
+@keyframes clientsMove{
+    from{transform:translateX(-80px)}
+    to{transform:translateX(-900px)}
+}
+
+/* FAQ */
+.faq-section{padding-top:0;padding-bottom:142px}
+.faq-heading{
+    text-align:center;font-size:31px;line-height:1.05;letter-spacing:-1.4px;
+    font-weight:400;margin-bottom:40px
+}
+.faq-list{width:438px;max-width:calc(100% - 40px);margin:0 auto}
+.faq-item{
+    border:1px solid #d9d9d9;border-radius:12px;overflow:hidden;margin-bottom:14px;
+    background:#fff;transition:box-shadow .35s ease
+}
+.faq-item.active{box-shadow:0 13px 35px rgba(0,0,0,.09)}
+.faq-trigger{
+    appearance:none;width:100%;background:transparent;border:none;cursor:pointer;
+    padding:15px 17px;display:flex;align-items:center;justify-content:space-between;
+    text-align:left;font-family:inherit;font-size:12px;color:#111
+}
+.faq-symbol{font-size:17px;font-weight:400}
+.faq-content{
+    max-height:0;overflow:hidden;padding:0 17px;
+    transition:max-height .45s ease,padding-bottom .45s ease
+}
+.faq-item.active .faq-content{max-height:100px;padding-bottom:15px}
+.faq-content p{font-size:8px;line-height:1.45;color:#222}
+
+/* CTA */
+.cta{text-align:center;padding-bottom:115px}
+.cta-small{font-size:8px;text-decoration:underline;margin-bottom:10px}
+.cta h2{
+    font-size:29px;line-height:1.02;letter-spacing:-1.3px;font-weight:400
+}
+.get-started{
+    width:420px;max-width:calc(100% - 50px);height:94px;margin:22px auto 0;
+    background:#222;color:#fff;border-radius:60px;display:flex;align-items:center;
+    justify-content:center;gap:22px;font-size:38px;letter-spacing:-1.5px;
+    transition:transform .35s ease,background .35s ease
+}
+.get-started:hover{transform:scale(1.025);background:#000}
+.cta-arrow{font-size:40px;transition:transform .35s ease}
+.get-started:hover .cta-arrow{transform:translate(5px,-5px)}
+
+/* FOOTER */
+.footer{background:#ffffff3;color:#000;overflow:hidden}
+.footer-info{
+    height:225px;display:grid;grid-template-columns:1fr 1fr;
+    border-bottom:1px solid rgba(0,0,0,.35)
+}
+.footer-location,.footer-contact{
+    display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center
+}
+.footer-location{border-right:1px solid rgba(0,0,0,.35)}
+.footer-info small{font-size:8px;font-weight:600;margin-bottom:13px}
+.footer-location div{font-size:18px;line-height:1.15}
+.footer-contact>a{
+    font-size:19px;text-decoration:underline;text-underline-offset:4px
+}
+.social{display:flex;gap:13px;margin-top:8px}
+.social a{font-size:18px;text-decoration:underline;text-underline-offset:4px}
+.footer-marquee{height:165px;overflow:hidden;display:flex;align-items:flex-end}
+.footer-marquee div{
+    font-size:135px;line-height:.65;letter-spacing:-8px;white-space:nowrap;
+    transform:translateX(-20px);font-weight:400
+}
+
+/* MOBILE */
+@media(max-width:600px){
+    .header{left:10px;right:10px;height:40px}
+    .header-title{font-size:9px}
+    .online{font-size:6px}
+    .access-btn{font-size:7px;padding:6px 9px}
+    .hero{height:600px}
+    .hero-center{top:145px;width:230px}
+    .hero-center h1{font-size:42px}
+    .hero-center p{font-size:8px}
+    .hero-left{width:190px;height:195px;left:-5px;top:110px}
+    .hero-right{width:190px;height:170px;right:-18px;top:365px}
+    .clients{height:250px}
+    .clients-title{margin-left:20px;font-size:12px;margin-bottom:38px}
+    .client-track{gap:32px}
+    .client-track span{font-size:37px}
+    .faq-section{padding-bottom:120px}
+    .faq-heading{font-size:29px}
+    .faq-list{max-width:calc(100% - 34px)}
+    .cta{padding-bottom:100px}
+    .cta h2{font-size:28px}
+    .get-started{height:76px;font-size:29px}
+    .cta-arrow{font-size:31px}
+    .footer-info{height:auto;grid-template-columns:1fr}
+    .footer-location,.footer-contact{height:185px}
+    .footer-location{border-right:none;border-bottom:1px solid rgba(0,0,0,.35)}
+    .footer-marquee{height:130px}
+    .footer-marquee div{font-size:100px;letter-spacing:-6px;}
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <a href="#" class="access-btn">Akses Sekarang</a>
+    <div class="header-title">Dari Masa Depan</div>
+    <div class="online">= Online</div>
+</header>
+
+<main>
+
+<section class="hero">
+    <div class="hero-art hero-left">
+        <img src="https://images.unsplash.com/photo-1667312939978-64cf31718a6e?q=80&w=187&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+    </div>
+
+    <div class="hero-center">
+        <div class="eyebrow">Tulisan Andinurulfr</div>
+        <h1>Menjadi<br>Sukses</h1>
+        <p>
+            dirancang untuk menginspirasi keberanian dalam mengekspresikan diri.
+            dirancang untuk menginspirasi keberanian dalam mengekspresikan diri.
+        </p>
+    </div>
+
+    <div class="hero-art hero-right">
+        <img src="https://images.unsplash.com/photo-1667312939978-64cf31718a6e?q=80&w=187&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+    </div>
+</section>
+
+<section class="clients">
+    <div class="clients-title">/ Dokumen Penting</div>
+    <div class="client-marquee">
+        <div class="client-track">
+            <span>Perspektif</span><span>Perspektif</span><span>Perspektif</span>
+            <span>Perspektif</span><span>Perspektif</span><span>Perspektif</span>
+            <span>Perspektif</span><span>Perspektif</span><span>Perspektif</span>
+            <span>Perspektif</span><span>Perspektif</span><span>Perspektif</span>
+    </div>
+</section>
+
+<section class="faq-section">
+    <h2 class="faq-heading">
+        menjadi sukses melalui 6 dokumen
+    </h2>
+
+    <div class="faq-list">
+
+        <div class="faq-item active">
+            <button class="faq-trigger">
+                <span>Bagaimana keadaannya?</span>
+                <span class="faq-symbol">−</span>
+            </button>
+            <div class="faq-content">
+                <p>
+                    Kota tidak pernah benar-benar tidur.
+                    Ketika sebagian orang menutup mata,
+                    lampu jalan masih menyala,
+                </p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-trigger">
+                <span>Bagaimana keadaannya?</span>
+                <span class="faq-symbol">+</span>
+            </button>
+            <div class="faq-content">
+                <p>Kota tidak pernah benar-benar tidur.
+                    Ketika sebagian orang menutup mata,
+                    lampu jalan masih menyala,</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-trigger">
+                <span>Bagaimana keadaannya?</span>
+                <span class="faq-symbol">+</span>
+            </button>
+            <div class="faq-content">
+                <p>Kota tidak pernah benar-benar tidur.
+                    Ketika sebagian orang menutup mata,
+                    lampu jalan masih menyala,</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-trigger">
+                <span>Bagaimana keadaannya?</span>
+                <span class="faq-symbol">+</span>
+            </button>
+            <div class="faq-content">
+                <p>Kota tidak pernah benar-benar tidur.
+                    Ketika sebagian orang menutup mata,
+                    lampu jalan masih menyala,</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-trigger">
+                <span>Bagaimana keadaannya?</span>
+                <span class="faq-symbol">+</span>
+            </button>
+            <div class="faq-content">
+                <p>Kota tidak pernah benar-benar tidur.
+                    Ketika sebagian orang menutup mata,
+                    lampu jalan masih menyala,</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-trigger">
+                <span>Bagaimana keadaannya?</span>
+                <span class="faq-symbol">+</span>
+            </button>
+            <div class="faq-content">
+                <p>Kota tidak pernah benar-benar tidur.
+                    Ketika sebagian orang menutup mata,
+                    lampu jalan masih menyala,</p>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<section class="cta">
+    <div class="cta-small">Fitur</div>
+    <div class="cta-small">Fitur</div>
+    <div class="cta-small">Fitur</div>
+    <div class="cta-small">Fitur</div>
+    <h2>Harga Produk</h2>
+    <a href="#" class="get-started">
+        <span>Aksese Sekarang</span>
+        <span class="cta-arrow">↗</span>
+    </a>
+</section>
+
+</main>
+
+<footer class="footer">
+
+    <div class="footer-info">
+
+        <div class="footer-location">
+            <small>....</small>
+            <div>Syarat dan Ketentuan<br>Kebijakan Privasi</div>
+        </div>
+
+        <div class="footer-contact">
+            <small>....</small>
+            <a href="mailto:">halo@darimasadepan</a>
+            <div class="social">
+                <a href="#">sosial</a>
+               
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-marquee">
+        <div>dari masa depan dari masa depan</div>
+    </div>
+
+</footer>
+
+<script>
+/* FAQ */
+const faqItems=document.querySelectorAll(".faq-item");
+
+faqItems.forEach(item=>{
+    const trigger=item.querySelector(".faq-trigger");
+    const symbol=item.querySelector(".faq-symbol");
+
+    trigger.addEventListener("click",()=>{
+        const active=item.classList.contains("active");
+
+        faqItems.forEach(faq=>{
+            faq.classList.remove("active");
+            faq.querySelector(".faq-symbol").textContent="+";
+        });
+
+        if(!active){
+            item.classList.add("active");
+            symbol.textContent="−";
+        }
+    });
+});
+
+/* Hero parallax */
+const leftImage=document.querySelector(".hero-left");
+const rightImage=document.querySelector(".hero-right");
+
+window.addEventListener("scroll",()=>{
+    if(window.innerWidth>600){
+        const scroll=window.scrollY;
+        leftImage.style.transform=`translateY(${scroll*.08}px)`;
+        rightImage.style.transform=`translateY(${scroll*-.06}px)`;
+    }
+});
+
+/* Footer movement */
+const footerText=document.querySelector(".footer-marquee div");
+
+window.addEventListener("scroll",()=>{
+    if(!footerText)return;
+    footerText.style.transform=`translateX(${-20-window.scrollY*.12}px)`;
+});
+</script>
+
+</body>
+</html>
